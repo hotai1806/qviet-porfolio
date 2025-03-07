@@ -25,7 +25,7 @@ export default function Home() {
               onClick={() => handleScrollTo("project")}
               className="hover:text-[#d94100] transition-colors"
             >
-              Porject
+              Project
             </div>
             <div
               onClick={() => handleScrollTo("showcase")}
@@ -77,7 +77,7 @@ export default function Home() {
         </section>
 
         {/* Project Section */}
-        <section id="porject" className="mb-32">
+        <section id="project" className="mb-32">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-6xl font-light">Project</h2>
             <Link
