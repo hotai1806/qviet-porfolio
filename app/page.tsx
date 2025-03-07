@@ -1,10 +1,17 @@
-import Image from "next/image"
-import Link from "next/link"
-import ProjectCard from "../components/ProjectCard"
-import TestimonialCard from "../components/TestimonialCard"
-import Footer from "../components/Footer"
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import ProjectCard from "../components/ProjectCard";
+import TestimonialCard from "../components/TestimonialCard";
+import Footer from "../components/Footer";
 
 export default function Home() {
+  const handleScrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <main className="min-h-screen bg-[#010101] text-white">
       <div className="container mx-auto px-6 py-8">
@@ -14,21 +21,30 @@ export default function Home() {
             Juan Simmons <sup className="text-xs">TM</sup>
           </div>
           <nav className="flex items-center gap-8">
-            <Link href="#work" className="hover:text-[#d94100] transition-colors">
+            <div
+              onClick={() => handleScrollTo("work")}
+              className="hover:text-[#d94100] transition-colors"
+            >
               Work
-            </Link>
-            <Link href="#service" className="hover:text-[#d94100] transition-colors">
+            </div>
+            <div
+              onClick={() => handleScrollTo("service")}
+              className="hover:text-[#d94100] transition-colors"
+            >
               Service
-            </Link>
-            <Link href="#testimonial" className="hover:text-[#d94100] transition-colors">
+            </div>
+            <div
+              onClick={() => handleScrollTo("testimonial")}
+              className="hover:text-[#d94100] transition-colors"
+            >
               Testimonial
-            </Link>
-            <Link
-              href="#contact"
+            </div>
+            <div
+              onClick={() => handleScrollTo("contact")}
               className="border border-white rounded-md px-6 py-2 hover:bg-white hover:text-[#010101] transition-colors"
             >
               Contact
-            </Link>
+            </div>
           </nav>
         </header>
 
@@ -72,10 +88,26 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ProjectCard imageSrc="/placeholder.svg?height=300&width=500" title="Project" subtitle="Mobile App" />
-            <ProjectCard imageSrc="/placeholder.svg?height=300&width=500" title="Project" subtitle="Mobile App" />
-            <ProjectCard imageSrc="/placeholder.svg?height=300&width=500" title="Project" subtitle="Mobile App" />
-            <ProjectCard imageSrc="/placeholder.svg?height=300&width=500" title="Project" subtitle="Mobile App" />
+            <ProjectCard
+              imageSrc="/placeholder.svg?height=300&width=500"
+              title="Project"
+              subtitle="Mobile App"
+            />
+            <ProjectCard
+              imageSrc="/placeholder.svg?height=300&width=500"
+              title="Project"
+              subtitle="Mobile App"
+            />
+            <ProjectCard
+              imageSrc="/placeholder.svg?height=300&width=500"
+              title="Project"
+              subtitle="Mobile App"
+            />
+            <ProjectCard
+              imageSrc="/placeholder.svg?height=300&width=500"
+              title="Project"
+              subtitle="Mobile App"
+            />
           </div>
         </section>
 
@@ -114,6 +146,5 @@ export default function Home() {
       {/* Footer */}
       <Footer />
     </main>
-  )
+  );
 }
-
