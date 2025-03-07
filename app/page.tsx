@@ -53,11 +53,11 @@ export default function Home() {
           <h1 className="text-8xl font-light leading-tight">
             <span className="text-[#5f5f5f]">Hi,</span>{" "}
             <Image
-              src="/sushi.jpg?height=80&width=150"
+              src="/qvietportrait.jpeg"
               alt="Profile"
               width={150}
               height={80}
-              className="inline-block bg-[#d94100] -mb-2 mx-4"
+              className="inline-block bg-[#d94100]  -mb-2 mx-4 h-24 w-36 object-cover object-[50%_35%]"
             />{" "}
             <span className="text-[#5f5f5f]">I'm</span> Jason
             <br />
