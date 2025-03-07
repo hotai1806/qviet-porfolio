@@ -1,6 +1,7 @@
 // components/SkillsSection.jsx
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 type SkillCardProps = {
   title: string;
@@ -56,6 +57,14 @@ const SkillCard = ({
 const SkillsSection = () => {
   const skills = [
     {
+      title: "Research",
+      icon: "🔍",
+      level: 96,
+      color: "#9C27B0",
+      description:
+        "Research methodology expertise including literature reviews, experimental design, and analysis. Experience converting research questions into testable hypotheses and actionable insights.",
+    },
+    {
       title: "Python",
       icon: "🐍",
       level: 95,
@@ -87,14 +96,7 @@ const SkillsSection = () => {
       description:
         "End-to-end data analysis workflow from data cleaning to visualization and insights. Experience with statistical analysis, predictive modeling, and communicating findings to stakeholders.",
     },
-    {
-      title: "Research",
-      icon: "🔍",
-      level: 85,
-      color: "#9C27B0",
-      description:
-        "Research methodology expertise including literature reviews, experimental design, and analysis. Experience converting research questions into testable hypotheses and actionable insights.",
-    },
+
     {
       title: "Technical Editing",
       icon: "✏️",

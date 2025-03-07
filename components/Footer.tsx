@@ -7,22 +7,16 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex justify-center gap-8 mb-8">
           <Link
-            href="https://instagram.com"
+            href="https://instagram.com/quocvietquat"
             className="hover:text-[#d94100] transition-colors"
           >
             Instagram
           </Link>
           <Link
-            href="https://behance.net"
+            href="https://www.linkedin.com/in/hhqviet/"
             className="hover:text-[#d94100] transition-colors"
           >
-            Behance
-          </Link>
-          <Link
-            href="https://twitter.com"
-            className="hover:text-[#d94100] transition-colors"
-          >
-            Twitter
+            LinkedIn
           </Link>
         </div>
 
@@ -35,7 +29,7 @@ export default function Footer() {
             <p> Jason Huang Data Analyst</p>
           </div>
           <div className="flex gap-6">
-            <Link
+            {/* <Link
               href="/style-guide"
               className="text-sm hover:text-[#d94100] transition-colors"
             >
@@ -52,7 +46,7 @@ export default function Footer() {
               className="text-sm hover:text-[#d94100] transition-colors"
             >
               Changelog
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

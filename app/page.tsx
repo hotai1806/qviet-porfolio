@@ -6,6 +6,7 @@ import TestimonialCard from "../components/TestimonialCard";
 import Footer from "../components/Footer";
 import SkillsSection from "../components/SkillsSection";
 import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 
 export default function Home() {
   const handleScrollTo = (id: string) => {
@@ -15,6 +16,8 @@ export default function Home() {
     }
   };
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Add this useEffect to your component
   useEffect(() => {
@@ -34,12 +37,14 @@ export default function Home() {
       <div className="container mx-auto px-6 py-8">
         {/* Header */}
         <header
-          className={`flex justify-between items-center w-full px-6 py-4 transition-all duration-300 `}
+          className={`flex justify-between items-center w-full px-6 py-4 transition-all duration-300 fixed top-0 right-0`}
         >
           <div className="text-xl font-medium">
-            Jason Huang <sup className="text-xs">TM</sup>
+            <Link href="#">
+              Jason Huang <sup className="text-xs">TM</sup>
+            </Link>
           </div>
-          <nav className="flex items-center gap-8">
+          <nav className="md:flex hidden items-center gap-8">
             <div
               onClick={() => handleScrollTo("skills")}
               className="hover:text-[#d94100] transition-colors"
@@ -66,6 +71,58 @@ export default function Home() {
               Contact
             </div>
           </nav>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden flex items-center"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <Menu size={24} />
+          </button>
+
+          {/* Mobile Navigation Overlay */}
+          {isMenuOpen && (
+            <div className="fixed inset-0 bg-white z-50 md:hidden">
+              <div className="flex justify-between items-center p-6 border-b">
+                <div className="text-xl font-medium">
+                  Jason Huang <sup className="text-xs">TM</sup>
+                </div>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-2xl"
+                  aria-label="Close menu"
+                >
+                  ✕
+                </button>
+              </div>
+              <nav className="flex flex-col p-6 gap-6 text-lg">
+                <div
+                  onClick={() => handleScrollTo("skills")}
+                  className="hover:text-[#d94100] transition-colors cursor-pointer"
+                >
+                  Skills
+                </div>
+                <div
+                  onClick={() => handleScrollTo("projects")}
+                  className="hover:text-[#d94100] transition-colors cursor-pointer"
+                >
+                  Projects
+                </div>
+                <div
+                  onClick={() => handleScrollTo("experience")}
+                  className="hover:text-[#d94100] transition-colors cursor-pointer"
+                >
+                  Experience
+                </div>
+                <div
+                  onClick={() => handleScrollTo("contact")}
+                  className="hover:text-[#d94100] transition-colors cursor-pointer"
+                >
+                  Contact
+                </div>
+              </nav>
+            </div>
+          )}
         </header>
 
         {/* Hero Section */}
@@ -88,7 +145,7 @@ export default function Home() {
 
           <div className="mt-12">
             <Link
-              href="#contact"
+              href="mailto:hqviet@gmail.com?subject=Contact%20Request"
               className="inline-block bg-[#d94100] text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition-colors"
             >
               Hire Me
@@ -134,7 +191,18 @@ export default function Home() {
 
         {/* References Section */}
         <section id="references" className="mb-32">
-          <h2 className="text-6xl font-light text-center mb-16">References</h2>
+          <h2 className="text-6xl font-light text-center mb-8">References</h2>
+          <div className="flex  items-center justify-center">
+            <div className=" block mb-12 items-center justify-center">
+              <Link
+                href="https://drive.google.com/drive/folders/1jtesl16JN7IKVG75t7TAza_M-jU_yWoD"
+                className="inline bg-[#d94100] text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition-colors"
+              >
+                Certificate here
+              </Link>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <TestimonialCard
               quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros"
