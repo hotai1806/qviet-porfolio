@@ -44,7 +44,8 @@ export default function Home() {
               Jason Huang <sup className="text-xs">TM</sup>
             </Link>
           </div>
-          <nav className="md:flex hidden items-center gap-8">
+
+          <nav className="hidden md:flex items-center gap-8">
             <div
               onClick={() => handleScrollTo("skills")}
               className="hover:text-[#d94100] transition-colors"
@@ -81,48 +82,51 @@ export default function Home() {
           </button>
 
           {/* Mobile Navigation Overlay */}
-          {isMenuOpen && (
-            <div className="fixed inset-0 bg-white z-50 md:hidden">
-              <div className="flex justify-between items-center p-6 border-b">
-                <div className="text-xl font-medium">
-                  Jason Huang <sup className="text-xs">TM</sup>
-                </div>
-                <button
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-2xl"
-                  aria-label="Close menu"
-                >
-                  ✕
-                </button>
+
+          <div
+            className={`block fixed inset-0 bg-black z-50 md:hidden transform transition-transform duration-500 ${
+              isMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
+            <div className="flex justify-between items-center p-3 border-b">
+              <div className="text-xl font-medium m-2">
+                Jason Huang <sup className="text-xs">TM</sup>
               </div>
-              <nav className="flex flex-col p-6 gap-6 text-lg">
-                <div
-                  onClick={() => handleScrollTo("skills")}
-                  className="hover:text-[#d94100] transition-colors cursor-pointer"
-                >
-                  Skills
-                </div>
-                <div
-                  onClick={() => handleScrollTo("projects")}
-                  className="hover:text-[#d94100] transition-colors cursor-pointer"
-                >
-                  Projects
-                </div>
-                <div
-                  onClick={() => handleScrollTo("experience")}
-                  className="hover:text-[#d94100] transition-colors cursor-pointer"
-                >
-                  Experience
-                </div>
-                <div
-                  onClick={() => handleScrollTo("contact")}
-                  className="hover:text-[#d94100] transition-colors cursor-pointer"
-                >
-                  Contact
-                </div>
-              </nav>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="text-2xl"
+                aria-label="Close menu"
+              >
+                ✕
+              </button>
             </div>
-          )}
+            <nav className="flex flex-col p-6 gap-6 text-lg">
+              <div
+                onClick={() => handleScrollTo("skills")}
+                className="hover:text-[#d94100] transition-colors cursor-pointer"
+              >
+                Skills
+              </div>
+              <div
+                onClick={() => handleScrollTo("projects")}
+                className="hover:text-[#d94100] transition-colors cursor-pointer"
+              >
+                Projects
+              </div>
+              <div
+                onClick={() => handleScrollTo("experience")}
+                className="hover:text-[#d94100] transition-colors cursor-pointer"
+              >
+                Experience
+              </div>
+              <div
+                onClick={() => handleScrollTo("contact")}
+                className="hover:text-[#d94100] transition-colors cursor-pointer"
+              >
+                Contact
+              </div>
+            </nav>
+          </div>
         </header>
 
         {/* Hero Section */}
