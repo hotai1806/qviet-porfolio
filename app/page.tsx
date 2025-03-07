@@ -140,7 +140,8 @@ export default function Home() {
               height={80}
               className="inline-block bg-[#d94100]  -mb-2 mx-4 h-28 w-40 object-cover object-[50%_35%]"
             />{" "}
-            <span className="text-[#5f5f5f]">I'm</span> Jason
+            <span className="text-[#5f5f5f]">I'm</span>{" "}
+            <span className="text-[#d94100]">Jason </span>
             <br />
             Data Analyst
             <br />
