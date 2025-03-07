@@ -18,26 +18,26 @@ export default function Home() {
         {/* Header */}
         <header className="flex justify-between items-center">
           <div className="text-xl font-medium">
-            Juan Simmons <sup className="text-xs">TM</sup>
+            Jason Huang <sup className="text-xs">TM</sup>
           </div>
           <nav className="flex items-center gap-8">
             <div
-              onClick={() => handleScrollTo("work")}
+              onClick={() => handleScrollTo("project")}
               className="hover:text-[#d94100] transition-colors"
             >
-              Work
+              Porject
             </div>
             <div
-              onClick={() => handleScrollTo("service")}
+              onClick={() => handleScrollTo("showcase")}
               className="hover:text-[#d94100] transition-colors"
             >
-              Service
+              Showcase
             </div>
             <div
-              onClick={() => handleScrollTo("testimonial")}
+              onClick={() => handleScrollTo("references")}
               className="hover:text-[#d94100] transition-colors"
             >
-              Testimonial
+              References
             </div>
             <div
               onClick={() => handleScrollTo("contact")}
@@ -59,11 +59,11 @@ export default function Home() {
               height={80}
               className="inline-block bg-[#d94100] -mb-2 mx-4"
             />{" "}
-            <span className="text-[#5f5f5f]">I'm</span> Juan
+            <span className="text-[#5f5f5f]">I'm</span> Jason
             <br />
-            Website Designer
+            Data Analyst
             <br />
-            <span className="text-[#5f5f5f]">Based in Jakarta</span>
+            <span className="text-[#5f5f5f]">Based in Taipei</span>
           </h1>
 
           <div className="mt-12">
@@ -76,10 +76,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Work Section */}
-        <section id="work" className="mb-32">
+        {/* Project Section */}
+        <section id="porject" className="mb-32">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-6xl font-light">Work</h2>
+            <h2 className="text-6xl font-light">Project</h2>
             <Link
               href="#"
               className="border border-white rounded-md px-6 py-2 hover:bg-white hover:text-[#010101] transition-colors"
@@ -111,8 +111,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonial Section */}
-        <section id="testimonial" className="mb-32">
+        {/* References Section */}
+        <section id="references" className="mb-32">
           <h2 className="text-6xl font-light text-center mb-16">Testimonial</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <TestimonialCard
