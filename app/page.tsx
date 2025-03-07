@@ -4,6 +4,8 @@ import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 import TestimonialCard from "../components/TestimonialCard";
 import Footer from "../components/Footer";
+import SkillsSection from "../components/SkillsSection";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const handleScrollTo = (id: string) => {
@@ -12,27 +14,45 @@ export default function Home() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Add this useEffect to your component
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <main className="min-h-screen bg-[#010101] text-white">
       <div className="container mx-auto px-6 py-8">
         {/* Header */}
-        <header className="flex justify-between items-center">
+        <header
+          className={`flex justify-between items-center w-full px-6 py-4 transition-all duration-300 `}
+        >
           <div className="text-xl font-medium">
             Jason Huang <sup className="text-xs">TM</sup>
           </div>
           <nav className="flex items-center gap-8">
+            <div
+              onClick={() => handleScrollTo("skills")}
+              className="hover:text-[#d94100] transition-colors"
+            >
+              Skills
+            </div>
             <div
               onClick={() => handleScrollTo("project")}
               className="hover:text-[#d94100] transition-colors"
             >
               Project
             </div>
-            <div
-              onClick={() => handleScrollTo("showcase")}
-              className="hover:text-[#d94100] transition-colors"
-            >
-              Showcase
-            </div>
+
             <div
               onClick={() => handleScrollTo("references")}
               className="hover:text-[#d94100] transition-colors"
@@ -57,7 +77,7 @@ export default function Home() {
               alt="Profile"
               width={150}
               height={80}
-              className="inline-block bg-[#d94100]  -mb-2 mx-4 h-24 w-36 object-cover object-[50%_35%]"
+              className="inline-block bg-[#d94100]  -mb-2 mx-4 h-28 w-40 object-cover object-[50%_35%]"
             />{" "}
             <span className="text-[#5f5f5f]">I'm</span> Jason
             <br />
@@ -75,6 +95,7 @@ export default function Home() {
             </Link>
           </div>
         </section>
+        <SkillsSection />
 
         {/* Project Section */}
         <section id="project" className="mb-32">
@@ -113,20 +134,8 @@ export default function Home() {
 
         {/* References Section */}
         <section id="references" className="mb-32">
-          <h2 className="text-6xl font-light text-center mb-16">Testimonial</h2>
+          <h2 className="text-6xl font-light text-center mb-16">References</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <TestimonialCard
-              quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros"
-              name="Jordan Smith"
-              position="CEO"
-              company="Google"
-            />
-            <TestimonialCard
-              quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros"
-              name="Jordan Smith"
-              position="CEO"
-              company="Google"
-            />
             <TestimonialCard
               quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros"
               name="Jordan Smith"
