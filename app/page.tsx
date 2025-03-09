@@ -150,13 +150,15 @@ export default function Home() {
           </h1>
 
           <div className="mt-12">
-            <Link
+            <button
+              onClick={() => handleScrollTo("skills")}
               // href="mailto:hqviet@gmail.com?subject=Contact%20Request"
-              href="#skills"
+              // href="#skills"
+
               className="inline-block bg-[#d94100] text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition-colors"
             >
-              Skills
-            </Link>
+              More
+            </button>
           </div>
         </section>
 
@@ -167,12 +169,12 @@ export default function Home() {
           <section id="project" className="mb-32">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-6xl font-light">Project</h2>
-              <Link
+              {/* <Link
                 href="#"
                 className="border border-white rounded-md px-6 py-2 hover:bg-white hover:text-[#010101] transition-colors"
               >
                 View All
-              </Link>
+              </Link> */}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ProjectCard
@@ -189,23 +191,36 @@ export default function Home() {
                 linkGithub="https://github.com/qvieth/thesis-stock-processing"
               />
             </div>
+            <div className="mt-12 mb-12 flex items-center justify-center">
+              <div className=" ">
+                <Link
+                  // href="mailto:hqviet@gmail.com?subject=Contact%20Request"
+                  href="https://drive.google.com/drive/folders/1gCJSJb8O-kqC7x2XGlomX4tq2Ehf-NS8?usp=sharing"
+                  className="inline-block bg-[#d94100] text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition-colors"
+                >
+                  More
+                </Link>
+              </div>
+            </div>
           </section>
         </FadeInSection>
         {/* References Section */}
         <FadeInSection>
           <section id="references" className="mb-32">
-            <h2 className="text-6xl font-light text-center mb-8">References</h2>
+            <h2 className="text-6xl font-light text-center mb-8">
+              Certifications and Reference Letters
+            </h2>
             <div className="flex  items-center justify-center">
               <div className=" block mb-12 items-center justify-center">
                 <Link
                   href="https://drive.google.com/drive/folders/1jtesl16JN7IKVG75t7TAza_M-jU_yWoD"
                   className="inline bg-[#d94100] text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition-colors"
                 >
-                  Certificate here
+                  Proof
                 </Link>
               </div>
             </div>
-
+            {/* 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <TestimonialCard
                 quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros"
@@ -219,6 +234,28 @@ export default function Home() {
                 position="CEO"
                 company="Google"
               />
+            </div> */}
+          </section>
+        </FadeInSection>
+        {/* References Section */}
+        <FadeInSection>
+          <section id="contact" className="mb-32 ">
+            <h2 className="text-6xl font-light text-center mb-8">
+              Let’s create
+            </h2>
+            <h2 className="text-8xl font-light text-center mb-10">
+              something together
+            </h2>
+
+            <div className="flex  items-center justify-center p-10">
+              <div className=" block mb-12 items-center justify-center">
+                <Link
+                  href="mailto:hhq.viet@gmail.com?subject=Contact%20Request"
+                  className="inline bg-[#d94100] text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition-colors"
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
           </section>
         </FadeInSection>

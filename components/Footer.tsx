@@ -18,6 +18,12 @@ export default function Footer() {
           >
             LinkedIn
           </Link>
+          <Link
+            href="https://github.com/qvieth"
+            className="hover:text-[#d94100] transition-colors"
+          >
+            Github
+          </Link>
         </div>
 
         {/* Divider */}
