@@ -76,9 +76,17 @@ const SkillsSection = () => {
   ];
   const skills = [
     {
+      title: "MS Office",
+      icon: "📂",
+      level: 100,
+      color: "#3F51B5",
+      description:
+        "Advanced skills in PowerPoint, Word, and Excel for professional documentation and data analysis.",
+    },
+    {
       title: "Programming",
       icon: "💻",
-      level: 95,
+      level: 90,
       color: "#2196F3",
       description:
         "Expertise in Data Science, App Development, and Web Designing. Proficient in Python (Pandas, Seaborn, Sklearn, NLTK), SQL, and Linux.",
@@ -114,14 +122,6 @@ const SkillsSection = () => {
       color: "#F44336",
       description:
         "Proficient in statistical thinking, modeling, and data analysis for research and business applications.",
-    },
-    {
-      title: "MS Office",
-      icon: "📂",
-      level: 85,
-      color: "#3F51B5",
-      description:
-        "Advanced skills in PowerPoint, Word, and Excel for professional documentation and data analysis.",
     },
   ];
 
