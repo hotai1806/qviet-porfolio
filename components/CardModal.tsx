@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { X } from "lucide-react";
+import { ColumnsIcon, X } from "lucide-react";
 import Link from "next/link";
 
 interface CardModalProps {
@@ -62,7 +62,10 @@ const CardModal: React.FC<CardModalProps> = ({
 
           {/* Close button */}
           <button
-            onClick={onClose}
+            onClick={() => {
+              onClose();
+              console.log("close button clicked");
+            }}
             className="absolute top-2 right-2 p-1 rounded-full bg-white bg-opacity-70 hover:bg-opacity-100 transition-opacity"
           >
             <X size={24} />

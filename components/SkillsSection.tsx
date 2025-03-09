@@ -2,6 +2,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { FadeInSection } from "./FadeIn";
 
 type SkillCardProps = {
   title: string;
@@ -136,25 +137,28 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-transparent">
+    <section id="skills" className="py-20 bg-transparent mb-32">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4"> Expertise</h2>
-        </div>
-
+        <FadeInSection>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4"> Skills</h2>
+          </div>
+        </FadeInSection>
         {/* Main skill cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {skills.map((skill) => (
-            <SkillCard
-              key={skill.title}
-              title={skill.title}
-              icon={skill.icon}
-              level={skill.level}
-              color={skill.color}
-              description={skill.description}
-            />
-          ))}
-        </div>
+        <FadeInSection>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {skills.map((skill) => (
+              <SkillCard
+                key={skill.title}
+                title={skill.title}
+                icon={skill.icon}
+                level={skill.level}
+                color={skill.color}
+                description={skill.description}
+              />
+            ))}
+          </div>
+        </FadeInSection>
 
         {/* Additional technical skills */}
         <div className="text-center mb-16">
