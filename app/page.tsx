@@ -166,7 +166,7 @@ export default function Home() {
 
         {/* Project Section */}
         <FadeInSection>
-          <section id="project" className="mb-32">
+          <section id="project" className="py-20 mb-32">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-6xl font-light">Projects</h2>
               {/* <Link
@@ -206,7 +206,7 @@ export default function Home() {
         </FadeInSection>
         {/* References Section */}
         <FadeInSection>
-          <section id="references" className="mb-32">
+          <section id="references" className="py-20 mb-32">
             <h2 className="text-6xl font-light text-center mb-8">
               Certifications and Reference Letters
             </h2>
@@ -239,7 +239,7 @@ export default function Home() {
         </FadeInSection>
         {/* References Section */}
         <FadeInSection>
-          <section id="contact" className="mb-32 ">
+          <section id="contact" className="py-20 mb-32 ">
             <h2 className="text-6xl font-light text-center mb-8">
               Let’s create
             </h2>
