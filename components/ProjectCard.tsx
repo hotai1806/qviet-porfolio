@@ -37,7 +37,7 @@ export default function ProjectCard({
       <CardModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Product Title"
+        title={title}
         description={subtitle}
         imageUrl={imageSrc}
         imageAlt="Product image"

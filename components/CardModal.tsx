@@ -79,7 +79,7 @@ const CardModal: React.FC<CardModalProps> = ({
 
         {/* Content - more padding */}
         <div className="p-6">
-          <h2 className="text-2xl font-bold mb-3">{title}</h2>
+          <h2 className="text-black text-2xl font-bold mb-3">{title}</h2>
           <Link href={linkGithub}>
             <h2 className="text-2xl font-bold mb-3 text-gray-700">
               {linkGithub}
