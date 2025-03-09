@@ -5,10 +5,10 @@ import Link from "next/link";
 
 type SkillCardProps = {
   title: string;
-  icon: string;
+  icon?: string;
   level: number;
   color: string;
-  description: string;
+  description?: string;
 };
 
 const SkillCard = ({
@@ -55,55 +55,72 @@ const SkillCard = ({
 };
 
 const SkillsSection = () => {
-  const skills = [
+  const language = [
     {
-      title: "Research",
-      icon: "🔍",
-      level: 96,
-      color: "#9C27B0",
-      description:
-        "Research methodology expertise including literature reviews, experimental design, and analysis. Experience converting research questions into testable hypotheses and actionable insights.",
-    },
-    {
-      title: "Python",
-      icon: "🐍",
-      level: 95,
-      color: "#3776AB",
-      description:
-        "Advanced Python programming with expertise in data analysis (Pandas, NumPy, SciPy), machine learning (Scikit-learn, TensorFlow), and automation. Experience creating production-ready code and packages.",
-    },
-    {
-      title: "SQL",
-      icon: "🗃️",
+      title: "English",
       level: 90,
-      color: "#4479A1",
-      description:
-        "Expert in complex SQL queries, database optimization, and data modeling across PostgreSQL, MySQL, and SQLite. Experience with data warehousing concepts and ETL processes.",
-    },
-    {
-      title: "Linux",
-      icon: "🐧",
-      level: 88,
-      color: "#FCC624",
-      description:
-        "Proficient in Linux system administration, shell scripting (Bash), and automation. Experience with server management, package installation, and system optimization.",
-    },
-    {
-      title: "Data Science",
-      icon: "📊",
-      level: 92,
-      color: "#FF6384",
-      description:
-        "End-to-end data analysis workflow from data cleaning to visualization and insights. Experience with statistical analysis, predictive modeling, and communicating findings to stakeholders.",
+      color: "#9C27B0",
     },
 
     {
-      title: "Technical Editing",
-      icon: "✏️",
-      level: 88,
-      color: "#00BFA5",
+      title: "Chinese",
+      level: 70,
+      color: "#FF9800",
+    },
+    {
+      title: "Vietnamese",
+      level: 100,
+      color: "#2196F3",
+    },
+  ];
+  const skills = [
+    {
+      title: "Programming",
+      icon: "💻",
+      level: 95,
+      color: "#2196F3",
       description:
-        "Technical documentation and editing for clarity, accuracy, and accessibility. Experience with technical writing, proofreading, and creating documentation for technical products.",
+        "Expertise in Data Science, App Development, and Web Designing. Proficient in Python (Pandas, Seaborn, Sklearn, NLTK), SQL, and Linux.",
+    },
+    {
+      title: "Research",
+      icon: "🔬",
+      level: 90,
+      color: "#9C27B0",
+      description:
+        "Strong research skills in information gathering and interpretation, focusing on Climate Change and Sustainable Development.",
+    },
+    {
+      title: "Marketing",
+      icon: "📢",
+      level: 85,
+      color: "#FF9800",
+      description:
+        "Experience in digital and social media marketing, including designing engaging posts for online platforms.",
+    },
+    {
+      title: "Editing",
+      icon: "🎬",
+      level: 80,
+      color: "#4CAF50",
+      description:
+        "Skilled in photo and video editing, as well as copywriting for various media formats.",
+    },
+    {
+      title: "Statistics",
+      icon: "📊",
+      level: 88,
+      color: "#F44336",
+      description:
+        "Proficient in statistical thinking, modeling, and data analysis for research and business applications.",
+    },
+    {
+      title: "MS Office",
+      icon: "📂",
+      level: 85,
+      color: "#3F51B5",
+      description:
+        "Advanced skills in PowerPoint, Word, and Excel for professional documentation and data analysis.",
     },
   ];
 
@@ -122,15 +139,7 @@ const SkillsSection = () => {
     <section id="skills" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Technical Expertise</h2>
-          <div className="w-16 h-1 bg-black mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            My expertise spans programming, data science, and technical
-            research, with strong foundations in Python, SQL, and Linux
-            environments. I specialize in transforming complex data into
-            actionable insights through rigorous analysis and clear
-            communication.
-          </p>
+          <h2 className="text-3xl font-bold mb-4"> Expertise</h2>
         </div>
 
         {/* Main skill cards */}
@@ -148,26 +157,20 @@ const SkillsSection = () => {
         </div>
 
         {/* Additional technical skills */}
-        <div className="bg-black rounded-lg shadow-md p-8">
-          <h3 className="text-2xl font-bold mb-6 text-center">
-            Additional Technical Skills
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-            {technicalSkills.map((skill) => (
-              <div key={skill.name} className="mb-4">
-                <div className="flex justify-between mb-1">
-                  <span className="font-medium">{skill.name}</span>
-                  <span className="text-sm font-medium">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div
-                    className="h-2 rounded-full bg-blue-600"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4"> Language</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {language.map((skill) => (
+            <SkillCard
+              key={skill.title}
+              title={skill.title}
+              // icon={skill.icon}
+              level={skill.level}
+              color={skill.color}
+              // description={skill.description}
+            />
+          ))}
         </div>
       </div>
     </section>

@@ -172,24 +172,17 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ProjectCard
-              imageSrc="/placeholder.svg?height=300&width=500"
-              title="Project"
-              subtitle="Mobile App"
+              imageSrc="/shipbuilding_output.png"
+              title="Project: Shipbreaking statistics compilation 1967-2023"
+              subtitle="This repository contains a Jupyter Notebook analyzing shipbreaking trends from 1967 to 2013. The analysis focuses on Gross Tonnage across different countries, including Taiwan, Japan, USA, South Korea, China, India, Bangladesh, and Pakistan. The notebook leverages Python libraries such as pandas and matplotlib to visualize trends over time."
+              linkGithub="https://github.com/qvieth/shipbreaking-complilation"
             />
             <ProjectCard
-              imageSrc="/placeholder.svg?height=300&width=500"
-              title="Project"
-              subtitle="Mobile App"
-            />
-            <ProjectCard
-              imageSrc="/placeholder.svg?height=300&width=500"
-              title="Project"
-              subtitle="Mobile App"
-            />
-            <ProjectCard
-              imageSrc="/placeholder.svg?height=300&width=500"
-              title="Project"
-              subtitle="Mobile App"
+              imageSrc="/thesis.png"
+              title="Stock Data Downloader"
+              subtitle="This project analyzes Vietnamese stock market data, with a focus on the fintech sector. It calculates and tracks market capitalization changes over time for selected stocks, enabling sector-specific analysis and comparison.
+"
+              linkGithub="https://github.com/qvieth/thesis-stock-processing"
             />
           </div>
         </section>
