@@ -38,7 +38,7 @@ export default function Home() {
       <div className="container mx-auto px-6 py-8">
         {/* Header */}
         <header
-          className={`flex justify-between items-center w-full px-6 py-4 transition-all duration-300 fixed top-0 right-0`}
+          className={`flex justify-between items-center w-full z-50 px-6 py-4 transition-all duration-300 fixed top-0 right-0`}
         >
           <div className="text-xl font-medium">
             <Link href="#">
