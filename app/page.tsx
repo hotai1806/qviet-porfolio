@@ -168,7 +168,7 @@ export default function Home() {
         <FadeInSection>
           <section id="project" className="mb-32">
             <div className="flex justify-between items-center mb-8">
-              <h2 className="text-6xl font-light">Project</h2>
+              <h2 className="text-6xl font-light">Projects</h2>
               {/* <Link
                 href="#"
                 className="border border-white rounded-md px-6 py-2 hover:bg-white hover:text-[#010101] transition-colors"

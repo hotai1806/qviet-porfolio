@@ -18,10 +18,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <div
-      onClick={() => setIsModalOpen(true)}
-      className="group cursor-pointer -z-40"
-    >
+    <div onClick={() => setIsModalOpen(true)} className="group cursor-pointer">
       <div className="relative aspect-video overflow-hidden rounded-lg">
         <Image
           src={imageSrc || "/placeholder.svg"}
