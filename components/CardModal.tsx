@@ -37,17 +37,22 @@ const CardModal: React.FC<CardModalProps> = ({
 
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
+
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "auto";
     };
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 ">
       <div
         ref={modalRef}
         className="bg-white rounded-lg shadow-lg max-w-2xl w-full overflow-hidden"
@@ -62,11 +67,11 @@ const CardModal: React.FC<CardModalProps> = ({
 
           {/* Close button */}
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               onClose();
-              console.log("close button clicked");
             }}
-            className="absolute top-2 right-2 p-1 rounded-full bg-white bg-opacity-70 hover:bg-opacity-100 transition-opacity"
+            className="absolute top-2 right-2 p-1 rounded-full bg-white bg-opacity-70 hover:bg-opacity-100 transition-opacity z-10"
           >
             <X size={24} />
           </button>
