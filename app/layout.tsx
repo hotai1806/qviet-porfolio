@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   description:
     "Portfolio website for Jason Huang, Data Analyst based in Taipei, Taiwan.",
   generator: "v0.dev",
+
+  icons: [
+    {
+      rel: "icon",
+      type: "image/svg",
+      sizes: "32x32",
+      // url: "/qvietportrait.jpeg",
+      url: "/icon.svg",
+    },
+  ],
 };
 
 export default function RootLayout({
