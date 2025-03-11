@@ -37,10 +37,10 @@ export default function Home() {
   }, []);
   return (
     <main className="min-h-screen bg-[#010101] text-white">
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-6 py-8 ">
         {/* Header */}
         <header
-          className={`flex justify-between items-center w-full z-50 px-6 py-4 transition-all duration-300 fixed top-0 right-0`}
+          className={`backdrop-blur-xl flex justify-between items-center w-full z-50 px-6 py-4 transition-all duration-300 fixed top-0 right-0`}
         >
           <div className="text-xl font-medium">
             <Link href="#">
@@ -48,7 +48,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8 ">
             <div
               onClick={() => handleScrollTo("skills")}
               className="hover:text-[#d94100] transition-colors"
@@ -150,7 +150,7 @@ export default function Home() {
             <br />
             <span className="text-[#5f5f5f]">Based in Taipei</span>
           </h1>
-          <div className="absolute top-52 right-28">
+          <div className="md:absolute md:top-52 md:right-28">
             <ThreeDthing />
           </div>
 
