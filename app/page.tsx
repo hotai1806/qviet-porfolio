@@ -8,6 +8,7 @@ import SkillsSection from "../components/SkillsSection";
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { FadeInSection } from "../components/FadeIn";
+import Projects from "@/components/Project";
 
 export default function Home() {
   const handleScrollTo = (id: string) => {
@@ -169,28 +170,10 @@ export default function Home() {
           <section id="project" className="py-20 mb-32">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-6xl font-light">Projects</h2>
-              {/* <Link
-                href="#"
-                className="border border-white rounded-md px-6 py-2 hover:bg-white hover:text-[#010101] transition-colors"
-              >
-                View All
-              </Link> */}
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <ProjectCard
-                imageSrc="/shipbuilding_output.png"
-                title="Project: Shipbreaking statistics compilation 1967-2023"
-                subtitle="This repository contains a Jupyter Notebook analyzing shipbreaking trends from 1967 to 2013. The analysis focuses on Gross Tonnage across different countries, including Taiwan, Japan, USA, South Korea, China, India, Bangladesh, and Pakistan. The notebook leverages Python libraries such as pandas and matplotlib to visualize trends over time."
-                linkGithub="https://github.com/qvieth/shipbreaking-complilation"
-              />
-              <ProjectCard
-                imageSrc="/thesis.png"
-                title="Project: Stock Data Downloader"
-                subtitle="This project analyzes Vietnamese stock market data, with a focus on the fintech sector. It calculates and tracks market capitalization changes over time for selected stocks, enabling sector-specific analysis and comparison.
-"
-                linkGithub="https://github.com/qvieth/thesis-stock-processing"
-              />
-            </div>
+
+            <Projects />
+
             <div className="mt-12 mb-12 flex items-center justify-center">
               <div className=" ">
                 <Link
