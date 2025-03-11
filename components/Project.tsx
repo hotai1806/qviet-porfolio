@@ -22,7 +22,8 @@ const Projects = () => {
   const { loading, error, data } = useQuery(GET_ALL_PROJECTS);
 
   if (loading) return <p>Loading...</p>;
-  if (error)
+  if (error) {
+    console.log(error, 1111);
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <ProjectCard
@@ -35,11 +36,12 @@ const Projects = () => {
           imageSrc="/thesis.png"
           title="Project: Stock Data Downloader"
           subtitle="This project analyzes Vietnamese stock market data, with a focus on the fintech sector. It calculates and tracks market capitalization changes over time for selected stocks, enabling sector-specific analysis and comparison.
-"
+  "
           linkGithub="https://github.com/qvieth/thesis-stock-processing"
         />
       </div>
     );
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
