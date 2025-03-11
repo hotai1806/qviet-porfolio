@@ -56,10 +56,10 @@ export default function Home() {
               Skills
             </div>
             <div
-              onClick={() => handleScrollTo("project")}
+              onClick={() => handleScrollTo("projects")}
               className="hover:text-[#d94100] transition-colors"
             >
-              Project
+              Projects
             </div>
 
             <div
@@ -117,10 +117,10 @@ export default function Home() {
                 Projects
               </div>
               <div
-                onClick={() => handleScrollTo("experience")}
+                onClick={() => handleScrollTo("references")}
                 className="hover:text-[#d94100] transition-colors cursor-pointer"
               >
-                Experience
+                References
               </div>
               <div
                 onClick={() => handleScrollTo("contact")}
@@ -171,7 +171,7 @@ export default function Home() {
 
         {/* Project Section */}
         <FadeInSection>
-          <section id="project" className="py-20 mb-32">
+          <section id="projects" className="py-20 mb-32">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-6xl font-light">Projects</h2>
             </div>
