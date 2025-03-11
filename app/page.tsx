@@ -150,9 +150,6 @@ export default function Home() {
             <br />
             <span className="text-[#5f5f5f]">Based in Taipei</span>
           </h1>
-          <div className="md:absolute md:top-52 md:right-28">
-            <ThreeDthing />
-          </div>
 
           <div className="mt-12">
             <button
@@ -164,6 +161,9 @@ export default function Home() {
             >
               More
             </button>
+          </div>
+          <div className="md:absolute md:top-52 md:right-28 h-40">
+            <ThreeDthing />
           </div>
         </section>
 
@@ -194,7 +194,7 @@ export default function Home() {
         {/* References Section */}
         <FadeInSection>
           <section id="references" className="py-20 mb-32">
-            <h2 className="text-6xl font-light text-center mb-8">
+            <h2 className="text-5xl font-light text-center mb-8">
               Certifications and Reference Letters
             </h2>
             <div className="flex  items-center justify-center">
@@ -227,10 +227,10 @@ export default function Home() {
         {/* References Section */}
         <FadeInSection>
           <section id="contact" className="py-20 mb-32 ">
-            <h2 className="text-6xl font-light text-center mb-8">
+            <h2 className="text-5xl font-light text-center mb-8">
               Let’s create
             </h2>
-            <h2 className="text-8xl font-light text-center mb-10">
+            <h2 className="text-6xl font-light text-center mb-10">
               something together
             </h2>
 

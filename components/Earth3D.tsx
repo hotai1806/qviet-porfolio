@@ -8,6 +8,10 @@ interface MousePosition {
   x: number;
   y: number;
 }
+interface ViewportDimensions {
+  width: number;
+  height: number;
+}
 
 export default function ThreeDthing() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -19,6 +23,12 @@ export default function ThreeDthing() {
   const previousMousePositionRef = useRef<MousePosition>({ x: 0, y: 0 });
   const rotationSpeedRef = useRef<number>(0.002);
   const animationFrameRef = useRef<number | null>(null);
+  const [dimensions, setDimensions] = useState<ViewportDimensions>({
+    width: 0,
+    height: 0,
+  });
+
+  // Function to update dimensions
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -30,9 +40,16 @@ export default function ThreeDthing() {
       canvas: canvasRef.current,
       alpha: true,
       antialias: true,
+      powerPreference: "high-performance",
     });
+    const isMobile = window.innerWidth < 768;
 
-    renderer.setSize(400, 400);
+    if (!isMobile) {
+      renderer.setSize(400, 400);
+    } else {
+      renderer.setSize(320, 320);
+    }
+
     camera.position.z = 2;
 
     // Create the globe geometry
@@ -235,6 +252,10 @@ export default function ThreeDthing() {
     };
 
     renderer.domElement.addEventListener("click", handleClick);
+    // window.addEventListener("resize", () => {
+    //   camera.aspect = window.innerWidth / window.innerHeight;
+    //   camera.updateProjectionMatrix();
+    // });
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
@@ -277,9 +298,9 @@ export default function ThreeDthing() {
 
   return (
     <div>
-      <div className="flex items-center justify-center">
-        <div className="relative w-80 h-80">
-          <canvas ref={canvasRef} className="absolute inset-0" />
+      <div className="md:flex md:items-center md:justify-center left-0">
+        <div className="relative md:w-80 md:h-80">
+          <canvas ref={canvasRef} className="absolute inset-0 left-0" />
         </div>
       </div>
     </div>

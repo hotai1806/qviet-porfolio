@@ -30,8 +30,7 @@ export default function ProjectCard({
           src={imageSrc || "/placeholder.svg"}
           alt={title}
           layout="fill"
-          objectFit="contain"
-          className="transition-transform duration-300 group-hover:scale-105"
+          className="transition-transform duration-300 group-hover:scale-105  object-contain"
         />
       </div>
       <CardModal
