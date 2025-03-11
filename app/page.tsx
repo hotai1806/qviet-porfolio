@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { FadeInSection } from "../components/FadeIn";
 import Projects from "@/components/Project";
+import ThreeDthing from "@/components/Earth3D";
 
 export default function Home() {
   const handleScrollTo = (id: string) => {
@@ -149,6 +150,9 @@ export default function Home() {
             <br />
             <span className="text-[#5f5f5f]">Based in Taipei</span>
           </h1>
+          <div className="absolute top-52 right-28">
+            <ThreeDthing />
+          </div>
 
           <div className="mt-12">
             <button
