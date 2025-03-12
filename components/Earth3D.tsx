@@ -13,6 +13,17 @@ interface ViewportDimensions {
   height: number;
 }
 
+import landData from "@/lib/custom.geo.json";
+import * as d3 from "d3-geo";
+
+function isLand(lat: number, lon: number): boolean {
+  return landData.features.some((feature) =>
+    d3.geoContains(
+      feature as d3.ExtendedFeature<d3.GeoGeometryObjects | null>,
+      [lon, lat]
+    )
+  );
+}
 export default function ThreeDthing() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const textureLoader = new THREE.TextureLoader();
@@ -64,9 +75,24 @@ export default function ThreeDthing() {
 
     object3D.add(earth);
     scene.add(object3D);
-    earth.rotation.y = Math.PI;
+    // earth.rotation.y = 300;
+    // earth.rotation.x = 200;
+
     const pointLight = new THREE.PointLight(0xffffff, 1.6, 300);
     scene.add(pointLight);
+
+    const directionalLight1 = new THREE.DirectionalLight(0x5f5f5f, 2); // Blue-ish light
+    directionalLight1.position.set(1, 1, 1);
+    scene.add(directionalLight1);
+
+    // const directionalLight2 = new THREE.DirectionalLight(0xff8060, 1.5); // Orange-ish light
+    // directionalLight2.position.set(-1, -1, 1);
+    // scene.add(directionalLight2);
+
+    // Point light in the center
+    // const pointLight = new THREE.PointLight(0xffffff, 1);
+    // pointLight.position.set(0, 0, 0);
+
     const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
     scene.add(ambientLight);
     // Create points for the globe
@@ -78,7 +104,7 @@ export default function ThreeDthing() {
     for (let i = 0; i < particlesCount * 3; i += 3) {
       // Create points distributed in a sphere shape
       const phi = Math.acos(-1 + (2 * Math.floor(i / 3)) / particlesCount);
-      const theta = Math.sqrt(particlesCount * Math.PI) * phi;
+      const theta = Math.PI * (1 + Math.sqrt(5)) * Math.floor(i / 3);
 
       const x = Math.sin(phi) * Math.cos(theta);
       const y = Math.sin(phi) * Math.sin(theta);
@@ -120,9 +146,15 @@ export default function ThreeDthing() {
     // const pointsObj = new THREE.Points(particlesGeometry, pointsMaterial);
     // scene.add(pointsObj);
     const dotsGroup = new THREE.Group();
+    function cartesianToLatLon(x: number, y: number, z: number) {
+      const lat = Math.asin(y) * (180 / Math.PI); // Latitude in degrees
+      const lon = Math.atan2(z, x) * (180 / Math.PI); // Longitude in degrees
+      return { lat, lon };
+    }
 
     scene.add(dotsGroup);
-
+    const totalDots = 1000;
+    let count = 0;
     // Create dots distribution
     for (let i = 0; i < 1000; i++) {
       const phi = Math.acos(-1 + (2 * i) / 1000);
@@ -141,6 +173,19 @@ export default function ThreeDthing() {
       // const highlightDot = new THREE.Mesh(highlightGeom, highlightMat);
 
       // Choose color - occasionally add an orange highlight dot
+      // const { lat, lon } = cartesianToLatLon(x, y, z);
+
+      // if (isLand(lat, lon)) {
+      //   const dotGeometry = new THREE.SphereGeometry(0.01, 8, 8);
+      //   let dotColor = Math.random() > 0.99 ? 0xff6600 : 0x444444;
+      //   const dotMaterial = new THREE.MeshBasicMaterial({ color: dotColor });
+
+      //   const dot = new THREE.Mesh(dotGeometry, dotMaterial);
+      //   dot.position.set(x, y, z);
+      //   dotsGroup.add(dot);
+
+      //   count++; // Only increment if the dot is on land
+      // }
       let dotColor = 0x444444;
       if (Math.random() > 0.99) {
         dotColor = 0xff6600;
