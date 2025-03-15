@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#FFA500" stroke="#000000" stroke-width="5"/>
+
+  <!-- J Letter -->
+  <path d="M70,70 Q70,50 90,50 L110,50 Q130,50 130,70 L130,130 Q130,150 110,150 L90,150 Q70,150 70,130 Z" fill="#000000"/>
+  <path d="M90,70 L110,70 L110,130 Q110,140 100,140 Q90,140 90,130 Z" fill="#FFA500"/>
+
+  <!-- H Letter -->
+  <path d="M140,50 L160,50 L160,150 L140,150 Z" fill="#000000"/>
+  <path d="M140,90 L160,90 L160,110 L140,110 Z" fill="#FFA500"/>
+  <path d="M170,50 L190,50 L190,150 L170,150 Z" fill="#000000"/>
+</svg>
