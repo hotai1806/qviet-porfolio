@@ -81,7 +81,7 @@ export default function ThreeDthing() {
     const pointLight = new THREE.PointLight(0xffffff, 1.6, 300);
     scene.add(pointLight);
 
-    const directionalLight1 = new THREE.DirectionalLight(0x5f5f5f, 2); // Blue-ish light
+    const directionalLight1 = new THREE.DirectionalLight(0x5f5f5f, 2); // Gray-ish light
     directionalLight1.position.set(1, 1, 1);
     scene.add(directionalLight1);
 
